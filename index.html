@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Monica A Purba — Portfolio</title>
+
+  <!-- TAILWIND CDN (letakkan langsung di bawah meta seperti diminta) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Meta warna untuk mobile browser -->
+  <meta name="theme-color" content="#60a5fa" />
+</head>
+<body class="font-sans bg-gradient-to-r from-sky-50 via-blue-50 to-blue-100 text-gray-800">
+
+  <!-- NAVBAR (konsisten digunakan di seluruh halaman) -->
+  <header class="bg-white/70 backdrop-blur sticky top-0 z-40">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <a href="index.html" class="text-2xl font-bold text-blue-800">Monica Agustriani Purba</a>
+      <nav class="space-x-4 text-gray-700">
+        <a href="index.html" class="hover:text-blue-700 transition">Home</a>
+        <a href="about.html" class="hover:text-blue-700 transition">Tentang</a>
+        <a href="skills.html" class="hover:text-blue-700 transition">Skills</a>
+        <a href="projects.html" class="hover:text-blue-700 transition">Projects</a>
+        <a href="tugas-js.html" class="hover:text-blue-700 transition">Tugas JS</a>
+        <a href="contact.html" class="hover:text-blue-700 transition">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="container mx-auto text-center py-16">
+      <div class="max-w-2xl mx-auto">
+        <div class="mx-auto w-48 h-48 rounded-full overflow-hidden shadow-xl border-4 border-white">
+          <!-- foto: object-cover supaya tidak gepeng, beri transform scale di hover -->
+          <img src="assets/monica.jpg" alt="Monica Purba" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+        </div>
+
+        <h1 class="mt-6 text-3xl md:text-4xl font-extrabold text-blue-800">Halo, Saya Monica Agustriani Purba</h1>
+        <p class="mt-3 text-gray-600 text-lg">Mahasiswa Ilmu Komputer • Aktif Organisasi • Web Developer Enthusiast</p>
+        <p class="mt-2 text-gray-500 text-base">Tertarik pada pengembangan aplikasi berbasis web dan mobile, serta pengalaman dalam UI/UX design dan Java OOP.</p>
+
+        <div class="mt-6 flex justify-center gap-4">
+          <a href="about.html" class="px-6 py-2 rounded-full bg-blue-600 text-white shadow hover:bg-blue-700 transition">Tentang Saya</a>
+          <a href="projects.html" class="px-6 py-2 rounded-full border border-blue-600 text-blue-700 hover:bg-blue-50 transition">Lihat Proyek</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK SKILLS PREVIEW -->
+    <section class="container mx-auto py-10">
+      <h2 class="text-2xl text-center font-bold text-blue-800 mb-6">Beberapa Skill Utama</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:max-w-4xl mx-auto">
+        <!-- contoh card minimal -->
+        <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center gap-2 hover:scale-105 transition">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-12 h-12">
+          <span class="font-medium">HTML</span>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center gap-2 hover:scale-105 transition">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-12 h-12">
+          <span class="font-medium">CSS</span>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center gap-2 hover:scale-105 transition">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS" class="w-12 h-12">
+          <span class="font-medium">JavaScript</span>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center gap-2 hover:scale-105 transition">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-12 h-12">
+          <span class="font-medium">Java</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER with social quick links -->
+    <footer class="mt-12 py-8 bg-white/70">
+      <div class="flex justify-center gap-6 mb-4">
+      <a title="Email" href="mailto:monica@student.undiksha.ac.id" class="transition hover:scale-110">
+        <span class="inline-flex items-center gap-2 bg-white/80 p-3 rounded-full shadow">
+          ✉️ <span class="font-medium">Email</span>
+        </span>
+      </a>
+
+      <a title="Instagram" href="https://instagram.com/monicapurbaa" target="_blank" class="transition hover:scale-110">
+        <span class="inline-flex items-center gap-2 bg-white/80 p-3 rounded-full shadow">
+          <img src="https://unpkg.com/simple-icons@v9/icons/instagram.svg" alt="IG" class="w-5 h-5">
+          <span class="font-medium">Instagram</span>
+        </span>
+      </a>
+
+      <a title="LinkedIn" href="https://www.linkedin.com/in/monica-agustriani-purba-642502290/" target="_blank" class="transition hover:scale-110">
+        <span class="inline-flex items-center gap-2 bg-white/80 p-3 rounded-full shadow">
+          <img src="https://unpkg.com/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" class="w-5 h-5">
+          <span class="font-medium">LinkedIn</span>
+        </span>
+      </a>
+
+      <a title="WhatsApp" href="https://wa.me/6281271276030" target="_blank" class="transition hover:scale-110">
+        <span class="inline-flex items-center gap-2 bg-white/80 p-3 rounded-full shadow">
+          <img src="https://unpkg.com/simple-icons@v9/icons/whatsapp.svg" alt="WA" class="w-5 h-5">
+          <span class="font-medium">WhatsApp</span>
+        </span>
+      </a>
+    </div>
+    </footer>
+  </main>
+
+  <!-- Global script (smooth scroll, navbar, fade-in). -->
+  <script src="js/script.js" defer></script>
+</body>
+</html>

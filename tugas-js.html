@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tugas JS — Kalkulator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gradient-to-r from-sky-50 via-blue-50 to-blue-100 text-gray-800">
+
+  <header class="bg-white/70 sticky top-0 z-40">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <a href="projects.html" class="text-blue-800 font-bold">← Kembali</a>
+    </div>
+  </header>
+
+  <main class="min-h-[70vh] flex items-center justify-center p-8">
+    <div class="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md">
+      <h2 class="text-2xl font-bold text-center text-blue-800 mb-4">Kalkulator Interaktif</h2>
+
+      <!-- input bisa diketik manual -->
+      <input id="display" type="text" readonly 
+             class="w-full p-3 rounded text-right text-xl border mb-4 focus:ring-2 focus:ring-blue-400 outline-none" />
+
+      <div class="grid grid-cols-4 gap-2">
+        <!-- baris angka & operator -->
+        <button class="calc-btn bg-gray-100 py-3 rounded text-lg hover:bg-gray-200" data-value="7">7</button>
+        <button class="calc-btn bg-gray-100 py-3 rounded text-lg hover:bg-gray-200" data-value="8">8</button>
+        <button class="calc-btn bg-gray-100 py-3 rounded text-lg hover:bg-gray-200" data-value="9">9</button>
+        <button class="calc-btn bg-blue-100 py-3 rounded text-lg hover:bg-blue-200" data-value="/">÷</button>
+
+        <button class="calc-btn bg-gray-100 py-3 rounded text-lg hover:bg-gray-200" data-value="4">4</button>
+        <button class="calc-btn bg-gray-100 py-3 rounded text-lg hover:bg-gray-200" data-value="5">5</button>
+        <button class="calc-btn bg-gray-100 py-3 rounded text-lg hover:bg-gray-200" data-value="6">6</button>
+        <button class="calc-btn bg-blue-100 py-3 rounded text-lg hover:bg-blue-200" data-value="*">×</button>
+
+        <button class="calc-btn bg-gray-100 py-3 rounded text-lg hover:bg-gray-200" data-value="1">1</button>
+        <button class="calc-btn bg-gray-100 py-3 rounded text-lg hover:bg-gray-200" data-value="2">2</button>
+        <button class="calc-btn bg-gray-100 py-3 rounded text-lg hover:bg-gray-200" data-value="3">3</button>
+        <button class="calc-btn bg-blue-100 py-3 rounded text-lg hover:bg-blue-200" data-value="-">−</button>
+
+        <button class="calc-btn bg-gray-100 py-3 rounded text-lg col-span-2 hover:bg-gray-200" data-value="0">0</button>
+        <button class="calc-btn bg-gray-100 py-3 rounded text-lg hover:bg-gray-200" data-value=".">.</button>
+        <button id="clear" class="bg-red-400 text-white py-3 rounded hover:bg-red-500">C</button>
+
+        <button id="equals" class="col-span-4 bg-blue-600 text-white py-3 rounded text-lg hover:bg-blue-700">=</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const display = document.getElementById("display");
+    const buttons = document.querySelectorAll(".calc-btn");
+    const clearBtn = document.getElementById("clear");
+    const equalsBtn = document.getElementById("equals");
+
+    // klik tombol
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        display.value += btn.dataset.value;
+      });
+    });
+
+    // hapus input
+    clearBtn.addEventListener("click", () => {
+      display.value = "";
+    });
+
+    // hitung hasil
+    equalsBtn.addEventListener("click", () => {
+      try {
+        display.value = eval(display.value) || "";
+      } catch {
+        display.value = "Error";
+      }
+    });
+
+    // keyboard support
+    document.addEventListener("keydown", (e) => {
+      if (/[0-9+\-*/.]/.test(e.key)) {
+        display.value += e.key;
+      } else if (e.key === "Enter") {
+        try {
+          display.value = eval(display.value) || "";
+        } catch {
+          display.value = "Error";
+        }
+      } else if (e.key === "Backspace") {
+        display.value = display.value.slice(0, -1);
+      } else if (e.key === "Escape") {
+        display.value = "";
+      }
+    });
+  </script>
+</body>
+</html>
